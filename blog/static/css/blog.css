@@ -1,4 +1,10 @@
-.site_name {
+#site_name {
     color: red;
     font-family: 'Pacifico', cursive;
+}
+#large_el {
+    font-size: 2em;
+}
+.new_hr {
+    border-top: 2px solid red;
 }
