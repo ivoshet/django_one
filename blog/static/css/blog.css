@@ -1,3 +1,15 @@
+a {
+    text-decoration: none !important;
+    color: red !important;
+}
+a h1:hover {
+    color: blue !important;
+    text-decoration: none !important
+}
+a:hover {
+    color: blue !important;
+    text-decoration: none !important
+}
 #site_name {
     color: red;
     font-family: 'Pacifico', cursive;
@@ -7,4 +19,9 @@
 }
 .new_hr {
     border-top: 2px solid red;
+}
+#site_name_second {
+    color: orange;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
 }
