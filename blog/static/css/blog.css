@@ -2,10 +2,6 @@ a {
     text-decoration: none !important;
     color: red !important;
 }
-a h1:hover {
-    color: blue !important;
-    text-decoration: none !important
-}
 a:hover {
     color: blue !important;
     text-decoration: none !important
@@ -21,7 +17,7 @@ a:hover {
     border-top: 2px solid red;
 }
 #site_name_second {
-    color: orange;
-    font-weight: bold;
+    color: orange !important;
+    font-weight: bold !important;
     font-family: 'Pacifico', cursive;
 }
