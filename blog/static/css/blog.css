@@ -17,7 +17,8 @@ a:hover {
     border-top: 2px solid red;
 }
 #site_name_second {
-    color: orange !important;
-    font-weight: bold !important;
+    text-decoration: none;
+    color: orange;
+    font-weight: bold;
     font-family: 'Pacifico', cursive;
 }
