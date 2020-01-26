@@ -1,11 +1,3 @@
-a {
-    text-decoration: none !important;
-    color: red !important;
-}
-a:hover {
-    color: blue !important;
-    text-decoration: none !important
-}
 #site_name {
     color: red;
     font-family: 'Pacifico', cursive;
