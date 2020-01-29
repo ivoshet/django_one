@@ -27,6 +27,7 @@
         </a>
       </div>
       <div>
+        {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}">
           напиши мне...
         </a>
@@ -36,6 +37,15 @@
           черновики...
         </a>
       </div>
+      <div>
+        <p>Привет, {{user.username}} <a href="{% url 'logout' %}">выйти</a></p>
+
+      </div>
+      {% else %}
+      <div>
+        <a href="{% url 'login' %}">войти...</a>
+      </div>
+      {% endif %}
     </div>
     <hr class="new_hr">
     <div class="content">
