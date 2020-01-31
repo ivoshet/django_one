@@ -6,24 +6,48 @@
   <div>
     {{ post.published_date }}
   </div>
-{% endif %}
+  {% endif %}
   <div>
     <h2 id="site_name">{{ post.title }}</h2>
-    <p>{{ post.text | linebreaksbr }}</p>
+    <p>{{ post.text | linebreaks }}</p>
   </div>
   <div class="menu">
-    <div class="first">
-      <a href="{% url 'post_edit' pk=post.pk %}">редактировать...</a>
-    </div>
-    <div>
-      <a href="{% url 'post_remove' pk=post.pk %}">удалить...</a>
-    </div>
+    {% if user.is_authenticated %}
+      <div class="first">
+        <a href="{% url 'post_edit' pk=post.pk %}">редактировать...</a>
+      </div>
+      <div>
+        <a href="{% url 'post_remove' pk=post.pk %}">удалить...</a>
+      </div>
       {% if post.published_date%}
       {% else %}
       <div>
         <a href="{% url 'post_publish' pk=post.pk %}">публиковать...</a>
       </div>
       {% endif %}
+    {% endif %}
+  </div>
+
+  {% for comment in post.comments.all %}
+  <div class="comments">
+    <div class="comment_date">
+      {{ comment.created_date }}
+    </div>
+    <div class="comment_author">
+      {{ comment.author }}
+      написал...
+    </div>
+    <div class="comment_text">
+        {{ comment.text | linebreaks}}
+    </div>
+  </div>
+  {% empty %}
+    <p>
+      Нет комментариев...
+    </p>
+  {% endfor %}
+  <div class="add_comments_btn">
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}"> добавить комментарий </a>
   </div>
 </div>
 {% endblock %}

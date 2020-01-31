@@ -14,3 +14,8 @@
     font-weight: bold;
     font-family: 'Pacifico', cursive;
 }
+
+.comment_author {
+    color: green;
+    font-weight: bolder;
+}
