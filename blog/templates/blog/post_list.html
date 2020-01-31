@@ -7,7 +7,7 @@
 </div>
 <div class="comment_count">
   <a href="{% url 'post_detail' pk=post.pk %}">
-    Комментариев {{ post.comments.count }}
+    Комментариев {{ post.approved_comments.count }}
   </a>
 </div>
 

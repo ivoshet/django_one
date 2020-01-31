@@ -27,12 +27,23 @@
       {% endif %}
     {% endif %}
   </div>
-
   {% for comment in post.comments.all %}
+
   <div class="comments">
     <div class="comment_date">
       {{ comment.created_date }}
     </div>
+
+
+
+    {% if user.is_authenticated or comment.approved_comment %}
+    {% if not comment.approved_comment %}
+      <div class="approve_remove">
+        <a href="{% url 'comment_remove' pk=comment.pk %}">удалить комментарий</a>
+        <a href="{% url 'comment_approve' pk=comment.pk %}">одобрить комментарий</a>
+      </div>
+    {% endif %}
+    {% endif %}
     <div class="comment_author">
       {{ comment.author }}
       написал...
@@ -41,6 +52,7 @@
         {{ comment.text | linebreaks}}
     </div>
   </div>
+
   {% empty %}
     <p>
       Нет комментариев...
